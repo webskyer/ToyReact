@@ -1,7 +1,21 @@
-require("./lib.js");
+import { createElement, Component, render } from "./tou-reat.js";
 
-for (let i of [1, 2, 3]) {
-  console.log(i);
+class MyComponent extends Component {
+  render() {
+    return (
+      <div>
+        <h1>my component</h1>
+        {this.children}
+      </div>
+    );
+  }
 }
 
-console.log("main");
+render(
+  <MyComponent id="a" class="c">
+    <div>abc</div>
+    <div></div>
+    <div></div>
+  </MyComponent>,
+  document.body
+);
